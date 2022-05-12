@@ -1,0 +1,5 @@
+Tri (a, b) ne marche pas
+
+CSS input pourquoi le width 100% sort de la div parent (malgré un padding)
+
+pourquoi le onclick du bouton delete s'actionne auto si il n'y a pas " () => "

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {createRoot} from 'react-dom/client';
 import { useState } from "react";
 import uuid from "react-uuid";
@@ -9,13 +9,18 @@ import "./style.css"
 
 const App = () => {
 
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
   const [activeNote, setActiveNote] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   const onAddNote = () => {
     const newNote = {id: uuid(),title: "Untitled Note", body: "", lastModified: Date.now()};
     setNotes([newNote, ...notes])
   };
+
   const onUpdateNote = (updatedNote) => {
     const updatedNotesArray = notes.map((note) => {
       if(note.id ==activeNote) {
@@ -25,9 +30,11 @@ const App = () => {
     })
     setNotes(updatedNotesArray)
   };
+
   const onDeleteNote = (idToDelete) => {
     setNotes(notes.filter((note) => note.id != idToDelete))
   };
+  
   const getActiveNote = () => {
     return notes.find((note) => note.id == activeNote)
   };

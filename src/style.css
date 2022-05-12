@@ -46,18 +46,20 @@ button:hover {
 
 .app-sidebar-header {
   display: flex;
+  background-color: rgb(188, 188, 188);
   justify-content: space-between;
   padding: 25px;
+  padding-right: 40px;
 }
 
 .app-sidebar-header h1 {
   margin: 0;
 }
-/*
+
 .app-sidebar-notes {
   height: calc(100vh - 78px);
   overflow-y: scroll;
-}*/
+}
 
 .app-sidebar-note {
   padding: 25px;
@@ -72,16 +74,17 @@ button:hover {
 .app-sidebar-note button {
   color: crimson;
 }
-/*
+
 .app-sidebar-note p {
   margin: 10px 0;
 }
-/*
+
+
 .app-sidebar-note small {
   display: block;
   color: #999;
 }
-*/
+
 
 .app-sidebar-note:hover {
   background: #ddd;
@@ -129,7 +132,7 @@ textarea {
   display: block;
   border: 1px solid #ddd;
   margin-bottom: 20px;
-  width: 96%;         /* pourquoi pas 100% ???? */
+  width: 96%;       
   height: calc(50vh - 130px);
   padding: 10px;
   resize: none;

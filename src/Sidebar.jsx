@@ -3,7 +3,6 @@ const Sidebar = ({notes, activeNote, setActiveNote, onAddNote, onDeleteNote }) =
   const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
 
   return(
-    // pourquoi le onclick du bouton delete s'actionne auto si il n'y a pas () =>
   <div className="app-sidebar">
     <div className="app-sidebar-header">
       <h1>Notes</h1>
