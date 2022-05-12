@@ -49,7 +49,6 @@ button:hover {
   background-color: rgb(188, 188, 188);
   justify-content: space-between;
   padding: 25px;
-  padding-right: 40px;
 }
 
 .app-sidebar-header h1 {
@@ -58,7 +57,7 @@ button:hover {
 
 .app-sidebar-notes {
   height: calc(100vh - 78px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .app-sidebar-note {
