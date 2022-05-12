@@ -1,0 +1,26 @@
+const Sidebar = ({notes, activeNote, setActiveNote, onAddNote, onDeleteNote }) => {
+
+  return(
+    // pourquoi le onclick du bouton delete s'actionne auto si il n'y a pas () =>
+  <div className="app-sidebar">
+    <div className="app-sidebar-header">
+      <h1>Notes</h1>
+      <button onClick={onAddNote}>Add</button>
+    </div>
+    <div className="app-sidebar-notes">
+      {notes.map((note) => (
+      <div className={`app-sidebar-note ${note.id == activeNote && "active"}`} onClick={() => setActiveNote(note.id)}>
+        <div className="app-sidebar-note-title">
+          <strong>{note.title}</strong>
+          <button onClick={() => onDeleteNote(note.id)}>Delete</button> 
+        </div>
+        <p>{note.body}</p>
+        <small className="note-meta">Last modified {note.lastModified}</small>
+      </div>
+      ))}
+    </div>
+  </div>
+)};
+
+
+export default Sidebar;
