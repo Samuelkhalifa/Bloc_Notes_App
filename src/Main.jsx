@@ -2,11 +2,11 @@ import ReactMarkdown from "react-markdown";
 
 const Main = ({activeNote, onUpdateNote}) => {
 
-  const onEditField = (key, value) => {
+  const onEditField = (field, value) => {
     onUpdateNote({
       ...activeNote,
-      [key]: value,
-      lastModfied: Date.now()
+      [field]: value,
+      lastModified: Date.now()
     })
 
   };
